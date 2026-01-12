@@ -37,6 +37,7 @@ public class CurrencyService {
     }
 
     public CurrencyListResponse getAllCurrencies() {
+        log.info("CurrencyService method getAllCurrencies executed");
         List<CurrencyShortDto> currencies = repository.findAll().stream()
                 .map(c -> new CurrencyShortDto(c.getName(), c.getValue()))
                 .toList();
